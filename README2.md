@@ -65,6 +65,42 @@ O código-fonte principal (`benford_image_analysis.py`) implementa os seguintes 
   <img src="assets/codigo.png" alt="Início do código Python" width="700">
 </p>
 
+O código completo está disponível [neste Gist](https://gist.github.com/deldotore-r/aed560d2e228194200161b042ef37bdb).
 
+## Como Usar
 
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/deldotore-r/benford_01.git](https://github.com/deldotore-r/benford_01.git)
+    ```
+
+2.  **Navegue até o diretório:**
+    ```bash
+    cd benford_01
+    ```
+
+3.  **Instale as dependências:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Execute o script:**
+
+    ```bash
+    python benford_image_analysis.py sua_imagem.png
+    ```
+
+    Substitua `sua_imagem.png` pelo caminho da imagem que você deseja analisar. O script imprimirá os resultados da análise para DCT e DWT.
+
+    Você pode modificar o script para analisar diferentes imagens, alterar o tipo de transformada (`DCT` ou `DWT`), o tipo de wavelet (para DWT) e o nível de decomposição.
+
+## Aplicações
+
+Este projeto pode ser útil para:
+
+-   **Detecção de manipulação de imagens:** Desvios significativos da Lei de Benford nos coeficientes de frequência podem indicar adulteração.
+-   **Análise forense de imagens digitais:** Fornece uma ferramenta quantitativa para avaliar a integridade de imagens.
+-   **Caracterização de imagens geradas por IA:** Imagens sintéticas podem apresentar distribuições de primeiros dígitos diferentes das imagens naturais.
+-   **Estudo de propriedades estatísticas de imagens:** Investigar como diferentes transformações e tipos de imagens se comportam em relação à Lei de Benford.
+-   **Aprendizado em processamento de imagens e análise estatística.**
 
