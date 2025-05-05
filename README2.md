@@ -61,4 +61,10 @@ O código-fonte principal (`benford_image_analysis.py`) implementa os seguintes 
 
 ## Trecho inicial do código principal:
 
+<p align="center">
+  <img src="assets/codigo.png" alt="Início do código Python" width="700">
+</p>
+
+
+
 
