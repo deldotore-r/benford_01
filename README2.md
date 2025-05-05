@@ -41,10 +41,24 @@ O projeto implementa um algoritmo para:
 git clone [https://github.com/deldotore-r/benford_01.git](https://github.com/deldotore-r/benford_01.git)
 cd benford_01
 
-# Criar e ativar um ambiente virtual (recomendado)
-python -m venv venv
-source venv/bin/activate  # No Linux/macOS
-venv\Scripts\activate  # No Windows
-
 # Instalar dependências
 pip install -r requirements.txt
+```
+
+## Implementação
+
+O código-fonte principal (`benford_image_analysis.py`) implementa os seguintes passos:
+
+- **Decomposição da Imagem:** Utiliza `scipy.fft.dctn` para a Transformada Discreta de Coseno (DCT) e `pywt.wavedec2` para a Transformada Wavelet Discreta (DWT).
+- **Extração do Primeiro Dígito:** A função `first_digit(n)` extrai o primeiro dígito significativo de um número.
+- **Cálculo da Distribuição:** A função `calculate_distribution(digits)` calcula a frequência dos primeiros dígitos observados.
+- **Distribuição Teórica de Benford:** A função `benford_distribution()` gera a distribuição teórica esperada pela Lei de Benford.
+- **Métricas de Conformidade:**
+    - **Divergência de Kullback-Leibler:** Calculada utilizando funcionalidades da biblioteca `numpy`.
+    - **Distância de Bhattacharyya:** Implementada na função `bhattacharyya_distance(p, q)`.
+    - **Coeficiente de Correlação de Pearson:** Calculado utilizando a função `pearsonr` do módulo `scipy.stats`.
+- **Análise Principal:** A função `analyze_image_benford(image_path, transform_type='DCT', wavelet='haar', level=1)` coordena a execução de todas as etapas da análise para uma dada imagem e tipo de transformação.
+
+## Trecho inicial do código principal:
+
+
