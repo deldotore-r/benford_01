@@ -2,15 +2,14 @@
 
 [![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/deldotore-r/benford_01?style=social)](https://github.com/deldotore-r/benford_01)
-[![GitHub Forks](https://img.shields.io/github/forks/deldotore-r/benford_01?style=social)](https://github.com/deldotore-r/benford_01)
+
 
 Apresento neste repositório uma ferramenta Python para analisar imagens digitais e verificar sua conformidade com a Lei de Benford, utilizando a Transformada Discreta de Coseno (DCT) ou a Transformada Wavelet Discreta (DWT) para decompor a imagem em componentes de frequência. Esta análise pode ser utilizada para detectar manipulações, identificar características de imagens geradas por inteligência artificial ou para caracterizar propriedades intrínsecas de diferentes tipos de imagens.
 
 ## Sobre a Lei de Benford
 
 <p align="center">
-  <img src="assets/Benford_graph.png" alt="Gráfico de Benford" width="400">
+  <img src="assets/Benford_graph.png" alt="Gráfico de Benford" width="550">
 </p>
 
 A Lei de Benford, também conhecida como Lei do Primeiro Dígito, é um fenômeno estatístico onde em muitos conjuntos de dados numéricos do mundo real, o primeiro dígito significativo segue uma distribuição logarítmica específica:
@@ -47,7 +46,7 @@ pip install -r requirements.txt
 
 ## Implementação
 
-O código-fonte principal (`benford_image_analysis.py`) implementa os seguintes passos:
+O código-fonte principal implementa os seguintes passos:
 
 - **Decomposição da Imagem:** Utiliza `scipy.fft.dctn` para a Transformada Discreta de Coseno (DCT) e `pywt.wavedec2` para a Transformada Wavelet Discreta (DWT).
 - **Extração do Primeiro Dígito:** A função `first_digit(n)` extrai o primeiro dígito significativo de um número.
