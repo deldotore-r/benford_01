@@ -6,7 +6,7 @@ Apresento neste repositório uma ferramenta Python para analisar imagens digitai
 ## Sobre a Lei de Benford
 
 <p align="center">
-  <img src="assets/Benford_graph.png" alt="Meu banner" width="400">
+  <img src="assets/Benford_graph.png" alt="Gráfico de Benford" width="400">
 </p>
 
 A Lei de Benford, também conhecida como Lei do Primeiro Dígito, é um fenômeno estatístico onde em muitos conjuntos de dados numéricos do mundo real, o primeiro dígito significativo segue uma distribuição logarítmica específica:
@@ -45,98 +45,78 @@ pip install -r requirements.txt
 Abaixo estão alguns exemplos de análises conduzidas com esta ferramenta:
 
 ### Imagem Natural Não Manipulada
-![Distribuição em Imagem Natural](https://github.com/seu-usuario/benford-image-analysis/raw/main/examples/natural_image_distribution.png)
 
-*Observe como a distribuição (barras azuis) segue de perto a Lei de Benford esperada (linha vermelha).*
+<p align="left">
+  <img src="assets/benford_natural.png" alt="Imagem natural" width="550">
+</p>
 
-### Imagem Manipulada
-![Distribuição em Imagem Manipulada](https://github.com/seu-usuario/benford-image-analysis/raw/main/examples/manipulated_image_distribution.png)
+*Observe como a distribuição (barras azuis) segue de perto a Lei de Benford esperada (linha vermelha).
 
-*Note o desvio significativo da Lei de Benford, particularmente nos dígitos 1, 2 e 9.*
+### Imagem criada por IA
+
+<p align="left">
+  <img src="assets/benford_manipulada.png" alt="Imagem criada por IA" width="550">
+</p>
+
+*Note o desvio significativo da Lei de Benford, particularmente nos dígitos 1 e 2.
 
 ## Implementação
 
 O código-fonte principal implementa os seguintes componentes:
 
-1. **Extração de Características**: Múltiplos métodos para extrair dados numericamente relevantes das imagens
-2. **Análise do Primeiro Dígito**: Algoritmo eficiente para calcular a distribuição do primeiro dígito significativo
-3. **Métricas de Conformidade**: Implementação de chi-quadrado, distância de Kullback-Leibler e outras métricas
-4. **Visualização**: Funções para gerar gráficos informativos dos resultados
+1. Extração do primeiro dígito;
+2. Análise do Primeiro Dígito;
+3. Métricas de Conformidade;
+4. Visualização.
 
 Trecho inicial do código principal:
 
 ```python
-import numpy as np
 import cv2
+import numpy as np
 import matplotlib.pyplot as plt
-from scipy import stats
-import os
-from tqdm import tqdm
+from collections import Counter
+import math
 
-class BenfordAnalyzer:
-    def __init__(self, feature_type='dct', significance_level=0.05):
-        """
-        Inicializa o analisador de Benford para imagens
-        
-        Parâmetros:
-        -----------
-        feature_type : str
-            Tipo de característica a extrair ('dct', 'gradient', 'wavelet', 'pixel')
-        significance_level : float
-            Nível de significância para testes estatísticos
-        """
-        self.feature_type = feature_type
-        self.significance_level = significance_level
-        
-        # Distribuição esperada pela Lei de Benford
-        self.benford_expected = np.array([0] + [np.log10(1 + 1/d) for d in range(1, 10)])
+# Função para extrair o primeiro dígito
+def first_digit(n):
+    while n >= 10:
+        n //= 10
+    return n
+
+# Função para calcular a distribuição de Benford
+def benford_distribution():
+    return [math.log10(1 + 1/d) for d in range(1, 10)]
+
+# Carregar imagem em tons de cinza
+image = cv2.imread('C:/Benford_S.png', cv2.IMREAD_GRAYSCALE)
+
+# Flatten (transforma matriz em vetor)
+pixels = image.flatten()
+
+# Remove zeros (não são úteis para Benford)
+pixels = pixels[pixels > 0]
+
+# Extrair primeiros dígitos
+first_digits = [first_digit(val) for val in pixels]
         
     # ... (código continua)
 ```
 
-O código completo está disponível [neste Gist](https://gist.github.com/seu-usuario/link-para-seu-gist).
+O código completo está disponível [neste Gist](https://gist.github.com/deldotore-r/aed560d2e228194200161b042ef37bdb).
 
 ## Aplicações
 
 Este projeto pode ser útil para:
 
-- Identificação de imagens manipuladas digitalmente
-- Estudo de propriedades estatísticas de diferentes tipos de imagens
-- Aprendizado sobre processamento de imagens e estatística aplicada
-- Detecção de imagens geradas por IA versus fotografias reais
-- Análise forense de imagens digitais
-
-## Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
-
-1. Fork o projeto
-2. Crie sua branch (`git checkout -b feature/sua-feature`)
-3. Commit suas alterações (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/sua-feature`)
-5. Abra um Pull Request
+- Identificação de imagens manipuladas digitalmente;
+- Estudo de propriedades estatísticas de diferentes tipos de imagens;
+- Aprendizado sobre processamento de imagens e estatística aplicada;
+- Detecção de imagens geradas por IA versus fotografias reais;
+- Análise forense de imagens digitais.
 
 ## Licença
 
 Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## Citação
 
-Se você utilizar este código em trabalhos acadêmicos, por favor cite:
-
-```
-@software{benford_image_analysis,
-  author = {Seu Nome},
-  title = {Análise de Benford em Imagens: Detecção de Manipulações e Caracterização Estatística},
-  year = {2025},
-  url = {https://github.com/seu-usuario/benford-image-analysis}
-}
-```
-
-## Contato
-
-[Seu Nome](mailto:seu-email@exemplo.com)
-
----
-
-Desenvolvido com ❤️ por [Seu Nome]
