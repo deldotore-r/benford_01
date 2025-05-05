@@ -16,7 +16,7 @@ Esta análise pode ser utilizada para detectar manipulações, identificar carac
   <img src="assets/Benford_graph.png" alt="Gráfico de Benford" width="550">
 </p>
 
-A Lei de Benford, também conhecida como Lei do Primeiro Dígito, é um fenômeno estatístico onde em muitos conjuntos de dados numéricos do mundo real, o primeiro dígito significativo segue uma distribuição logarítmica específica:
+A Lei de Benford, também conhecida como Lei do Primeiro Dígito, é um fenômeno estatístico em que muitos conjuntos de dados numéricos do mundo real, o primeiro dígito significativo segue uma distribuição logarítmica específica:
 
 - O dígito 1 aparece como primeiro dígito em cerca de 30.1% das vezes
 - O dígito 2 aparece como primeiro dígito em cerca de 17.6% das vezes
