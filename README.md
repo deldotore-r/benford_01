@@ -40,37 +40,6 @@ cd benford_01
 pip install -r requirements.txt
 ```
 
-## Como Usar
-
-### Exemplo Básico
-
-```python
-from benford_image import BenfordAnalyzer
-
-# Inicializar o analisador
-analyzer = BenfordAnalyzer()
-
-# Analisar uma única imagem
-result = analyzer.analyze_image("caminho/para/imagem.jpg")
-
-# Visualizar resultados
-analyzer.plot_distribution(result)
-
-# Verificar conformidade com a Lei de Benford
-conformity_score = analyzer.compute_conformity(result)
-print(f"Índice de conformidade: {conformity_score}")
-```
-
-### Análise em Lote
-
-```python
-# Analisar um diretório de imagens
-results = analyzer.analyze_directory("caminho/para/diretorio")
-
-# Comparar resultados entre imagens originais e manipuladas
-analyzer.compare_groups(results["original"], results["manipulated"])
-```
-
 ## Exemplos de Resultados
 
 Abaixo estão alguns exemplos de análises conduzidas com esta ferramenta:
