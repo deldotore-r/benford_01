@@ -29,7 +29,9 @@ Esta lei tem aplicações em auditoria financeira, detecção de fraudes, análi
 
 ## Como a Lei de Benford se Aplica a Imagens (via Transformações de Frequência)
 
-Neste projeto, a análise da Lei de Benford é aplicada aos **coeficientes de frequência** obtidos através da **Transformada Discreta de Coseno (DCT)** ou da **Transformada Wavelet Discreta (DWT)** da imagem. A ideia é que a distribuição dos primeiros dígitos desses coeficientes possa revelar padrões característicos de imagens naturais versus manipuladas ou geradas artificialmente.
+Neste projeto, a análise da Lei de Benford é aplicada aos **coeficientes de frequência** obtidos através da **Transformada Discreta de Coseno (DCT)** ou da **Transformada Wavelet Discreta (DWT)** da imagem. 
+
+A ideia é que a distribuição dos primeiros dígitos desses coeficientes possa revelar padrões característicos de imagens naturais versus manipuladas ou geradas artificialmente.
 
 O projeto implementa um algoritmo para:
 
