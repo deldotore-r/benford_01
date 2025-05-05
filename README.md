@@ -4,7 +4,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-Apresento neste repositório uma ferramenta Python para analisar imagens digitais e verificar sua conformidade com a Lei de Benford, utilizando a Transformada Discreta de Coseno (DCT) ou a Transformada Wavelet Discreta (DWT) para decompor a imagem em componentes de frequência. Esta análise pode ser utilizada para detectar manipulações, identificar características de imagens geradas por inteligência artificial ou para caracterizar propriedades intrínsecas de diferentes tipos de imagens.
+Apresento neste repositório uma ferramenta Python para analisar imagens digitais e verificar sua conformidade com a Lei de Benford, utilizando a Transformada Discreta de Coseno (DCT) ou a Transformada Wavelet Discreta (DWT) para decompor a imagem em componentes de frequência. 
+
+Esta análise pode ser utilizada para detectar manipulações, identificar características de imagens geradas por inteligência artificial ou para caracterizar propriedades intrínsecas de diferentes tipos de imagens.
 
 <br>
 
