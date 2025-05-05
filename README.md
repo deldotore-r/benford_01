@@ -5,6 +5,10 @@ Apresento neste repositório uma ferramenta Python para analisar imagens digitai
 
 ## Sobre a Lei de Benford
 
+<p align="center">
+  <img src="assets/Benford_graph.png" alt="Meu banner" width="400">
+</p>
+
 A Lei de Benford, também conhecida como Lei do Primeiro Dígito, é um fenômeno estatístico onde em muitos conjuntos de dados numéricos do mundo real, o primeiro dígito significativo segue uma distribuição logarítmica específica:
 
 - O dígito 1 aparece como primeiro dígito em cerca de 30.1% das vezes
@@ -16,21 +20,21 @@ Esta lei tem aplicações em auditoria financeira, detecção de fraudes, análi
 
 ## Como a Lei de Benford se Aplica a Imagens
 
-Em imagens digitais, podemos analisar os valores dos pixels, coeficientes de transformadas (como DCT ou wavelets), gradientes, ou outros atributos extraídos da imagem. Interessantemente, imagens naturais não manipuladas tendem a seguir a Lei de Benford para certos parâmetros, enquanto imagens manipuladas ou geradas artificialmente podem apresentar desvios significativos.
+Em imagens digitais, podemos analisar os valores dos pixels, coeficientes de transformadas (como DCT ou wavelets), gradientes, ou outros atributos extraídos da imagem. Curiosamente, imagens naturais não manipuladas tendem a seguir a Lei de Benford para certos parâmetros, enquanto imagens manipuladas ou geradas artificialmente podem apresentar desvios significativos.
 
-Este projeto implementa algoritmos para:
+Este projeto implementa um algoritmo para:
 
-1. Extrair características relevantes das imagens
-2. Analisar a distribuição do primeiro dígito
-3. Comparar com a distribuição esperada pela Lei de Benford
-4. Visualizar e quantificar os resultados
+1. Extrair características relevantes da imagem;
+2. Analisar a distribuição do primeiro dígito;
+3. Comparar com a distribuição esperada pela Lei de Benford;
+4. Visualizar e quantificar os resultados.
 
 ## Instalação
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/seu-usuario/benford-image-analysis.git
-cd benford-image-analysis
+git clone https://github.com/deldotore-r/benford_01.git
+cd benford_01 
 
 # Instalar dependências
 pip install -r requirements.txt
