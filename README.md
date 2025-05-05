@@ -93,6 +93,10 @@ O código completo está disponível [neste Gist](https://gist.github.com/deldot
 
     Você pode modificar o script para analisar diferentes imagens, alterar o tipo de transformada (`DCT` ou `DWT`), o tipo de wavelet (para DWT) e o nível de decomposição.
 
+## Exemplo de resultado de análise de imagem real:
+
+
+
 ## Aplicações
 
 Este projeto pode ser útil para:
