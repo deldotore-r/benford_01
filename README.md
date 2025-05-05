@@ -6,6 +6,8 @@
 
 Apresento neste repositório uma ferramenta Python para analisar imagens digitais e verificar sua conformidade com a Lei de Benford, utilizando a Transformada Discreta de Coseno (DCT) ou a Transformada Wavelet Discreta (DWT) para decompor a imagem em componentes de frequência. Esta análise pode ser utilizada para detectar manipulações, identificar características de imagens geradas por inteligência artificial ou para caracterizar propriedades intrínsecas de diferentes tipos de imagens.
 
+<br>
+
 ## Sobre a Lei de Benford
 
 <p align="center">
@@ -21,6 +23,8 @@ A Lei de Benford, também conhecida como Lei do Primeiro Dígito, é um fenômen
 
 Esta lei tem aplicações em auditoria financeira, detecção de fraudes, análise científica e, como explorado neste projeto, na análise de propriedades estatísticas de imagens digitais através da análise dos coeficientes de frequência obtidos por DCT ou DWT.
 
+<br>
+
 ## Como a Lei de Benford se Aplica a Imagens (via Transformações de Frequência)
 
 Neste projeto, a análise da Lei de Benford é aplicada aos **coeficientes de frequência** obtidos através da **Transformada Discreta de Coseno (DCT)** ou da **Transformada Wavelet Discreta (DWT)** da imagem. A ideia é que a distribuição dos primeiros dígitos desses coeficientes possa revelar padrões característicos de imagens naturais versus manipuladas ou geradas artificialmente.
@@ -33,6 +37,8 @@ O projeto implementa um algoritmo para:
 4. **Comparar com a distribuição teórica:** Utilizar métricas como Divergência de Kullback-Leibler, Distância de Bhattacharyya e Coeficiente de Correlação de Pearson para quantificar a similaridade entre a distribuição observada e a distribuição de Benford.
 5. **Visualizar os resultados (opcional):** Plotar as distribuições para comparação visual.
 
+<br>
+
 ## Instalação
 
 ```bash
@@ -43,6 +49,8 @@ cd benford_01
 # Instalar dependências
 pip install -r requirements.txt
 ```
+
+<br>
 
 ## Implementação
 
@@ -58,13 +66,17 @@ O código-fonte principal implementa os seguintes passos:
     - **Coeficiente de Correlação de Pearson:** Calculado utilizando a função `pearsonr` do módulo `scipy.stats`.
 - **Análise Principal:** A função `analyze_image_benford(image_path, transform_type='DCT', wavelet='haar', level=1)` coordena a execução de todas as etapas da análise para uma dada imagem e tipo de transformação.
 
+<br>
+
 ## Trecho inicial do código principal:
 
-<p align="center">
+<p align="left">
   <img src="assets/codigo.png" alt="Início do código Python" width="700">
 </p>
 
 O código completo está disponível [neste Gist](https://gist.github.com/deldotore-r/aed560d2e228194200161b042ef37bdb).
+
+<br>
 
 ## Como Usar
 
@@ -93,9 +105,25 @@ O código completo está disponível [neste Gist](https://gist.github.com/deldot
 
     Você pode modificar o script para analisar diferentes imagens, alterar o tipo de transformada (`DCT` ou `DWT`), o tipo de wavelet (para DWT) e o nível de decomposição.
 
+    
+
+<br>
+
 ## Exemplo de resultado de análise de imagem real:
 
+<p align="left">
+  <img src="assets/benford_natural.png" alt="Gráfico para imagem real" width="700">
+</p>
 
+<br>
+
+## Exemplo de resultado de análise de imagem criada por IA:
+
+<p align="left">
+  <img src="assets/benford_IA.png" alt="Gráfico para imagem criada por IA" width="700">
+</p>
+
+<br>
 
 ## Aplicações
 
